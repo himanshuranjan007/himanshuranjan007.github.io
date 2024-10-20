@@ -3,178 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #e9ecef;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #222;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        /* Navigation Styles */
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline-block;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-size: 1rem;
-            color: #555;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #007bff;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        section h2 {
-            font-size: 2rem;
-            color: #333;
-            border-bottom: 2px solid #007bff;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        .about p, .contact p {
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        /* Project Section */
-        .projects div {
-            margin: 20px 0;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .projects div:hover {
-            transform: translateY(-5px);
-        }
-        .projects h3 {
-            margin-bottom: 10px;
-            color: #444;
-        }
-
-        /* Contact Section */
-        .contact p {
-            font-size: 1.2rem;
-        }
-        .contact p a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .contact p a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Calculator</title>
 </head>
-<body>
+<style>
+    /* Global Styles */
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #121212; /* Dark background */
+        font-family: Arial, sans-serif; /* Font family */
+    }
 
-    <header>
-        <h1>My Portfolio</h1>
-        <p>Web Developer | Designer | Programmer</p>
-    </header>
+    /* Calculator Container */
+    .calculator {
+        width: 90%;
+        max-width: 300px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #1e1e1e; /* Dark card background */
+        text-align: center;
+    }
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    /* Display Input */
+    #display {
+        width: 100%;
+        padding: 10px;
+        font-size: 24px;
+        border: none;
+        border-radius: 4px;
+        background-color: #2e2e2e; /* Darker input background */
+        color: #e0e0e0; /* Light text color */
+        margin-bottom: 10px;
+    }
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hello! I am a passionate web developer with experience in building responsive and functional websites. I specialize in HTML, CSS, JavaScript, and modern frameworks.</p>
-    </section>
+    /* Buttons */
+    button {
+        background-color: #6200ee; /* Purple background */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 4px;
+        padding: 15px;
+        cursor: pointer;
+        margin: 5px;
+        transition: background-color 0.3s;
+        font-size: 18px;
+        width: 60px; /* Fixed width for buttons */
+    }
 
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div>
-            <h3><a href= "./calc.html" >Calculator </a></h3>
-            <p>A cool project description goes here.</p>
-        </div>
-        <div>
-            <h3>Project 2</h3>
-            <p>Another amazing project description goes here.</p>
-        </div>
-    </section>
+    button:hover {
+        background-color: #3700b3; /* Darker purple on hover */
+    }
 
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:myemail@example.com">myemail@example.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+123-456-7890</a></p>
-    </section>
+</style>
+<body >
+    
+     <div  >
+        <input type="text" id="display">
+    <div>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="addToDisplay('/')">/</button>
+            <button onclick="addToDisplay('*')">*</button>
+            <button onclick="addToDisplay('-')">-</button>
+            <br>
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('+')">+</button>
+            <br>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="calculateResult()">=</button>
+            <br>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('0')">0</button>
 
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-    </footer>
+
+    </div>
+    </div>
 
 </body>
+<script>
+    function addToDisplay(value){
+        document.getElementById("display").value += value
+    }
+    function clearDisplay(){
+            document.getElementById("display").value = "";
+    }
+    function calculateResult(){
+        const displaySelector = document.getElementById("display");
+        try {
+            displaySelector.value = eval(displaySelector.value);
+
+            
+        } catch (error) {
+            console.log("hello bitch")
+        }
+
+    }
+</script>
 </html>
