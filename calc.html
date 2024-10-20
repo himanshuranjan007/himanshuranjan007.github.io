@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    /* Global Styles */
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #121212; /* Dark background */
+        font-family: Arial, sans-serif; /* Font family */
+    }
+
+    /* Calculator Container */
+    .calculator {
+        width: 90%;
+        max-width: 300px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #1e1e1e; /* Dark card background */
+        text-align: center;
+    }
+
+    /* Display Input */
+    #display {
+        width: 100%;
+        padding: 10px;
+        font-size: 24px;
+        border: none;
+        border-radius: 4px;
+        background-color: #2e2e2e; /* Darker input background */
+        color: #e0e0e0; /* Light text color */
+        margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    button {
+        background-color: #6200ee; /* Purple background */
+        color: #ffffff; /* White text */
+        border: none;
+        border-radius: 4px;
+        padding: 15px;
+        cursor: pointer;
+        margin: 5px;
+        transition: background-color 0.3s;
+        font-size: 18px;
+        width: 60px; /* Fixed width for buttons */
+    }
+
+    button:hover {
+        background-color: #3700b3; /* Darker purple on hover */
+    }
+
+</style>
+<body >
+    
+     <div  >
+        <input type="text" id="display">
+    <div>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="addToDisplay('/')">/</button>
+            <button onclick="addToDisplay('*')">*</button>
+            <button onclick="addToDisplay('-')">-</button>
+            <br>
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('+')">+</button>
+            <br>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="calculateResult()">=</button>
+            <br>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('0')">0</button>
+
+
+    </div>
+    </div>
+
+</body>
+<script>
+    function addToDisplay(value){
+        document.getElementById("display").value += value
+    }
+    function clearDisplay(){
+            document.getElementById("display").value = "";
+    }
+    function calculateResult(){
+        const displaySelector = document.getElementById("display");
+        try {
+            displaySelector.value = eval(displaySelector.value);
+
+            
+        } catch (error) {
+            console.log("hello bitch")
+        }
+
+    }
+</script>
+</html>
